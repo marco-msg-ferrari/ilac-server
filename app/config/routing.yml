@@ -1,4 +1,6 @@
 ilac_main:
     resource: "@IlacMainBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /my/
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

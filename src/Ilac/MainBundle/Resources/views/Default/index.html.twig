@@ -1,1 +1,24 @@
+<html>
+<head>
+
+</head>
+<body>
 Hello {{ name }}!
+
+<div>
+    <ul>
+
+{% for test in glucoTests %}
+    <li>
+        <div>
+            {{ test.getValue }}
+        </div>
+        <div>
+            {{ test.getCreatedAt|date("d/m/Y") }}
+        </div>
+    </li>
+{% endfor %}
+    </ul>
+</div>
+</body>
+</html>
