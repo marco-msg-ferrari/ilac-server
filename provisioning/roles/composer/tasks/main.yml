@@ -1,0 +1,8 @@
+---
+- name: Composer | Ensure curl is installed.
+  apt: pkg=curl state=installed
+
+- name: Composer | Install Composer
+  shell:
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
+    creates=/usr/local/bin/composer

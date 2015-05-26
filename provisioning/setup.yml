@@ -1,0 +1,16 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  sudo: yes
+  pre_tasks:
+    - name: update apt cache
+      apt: update_cache=yes
+  roles:
+    - { role: apache , when: "env in ['local', 'dev', 'pre', 'prod']" }
+    - { role: mysql , when: "env in ['local', 'dev', 'pre']" }
+    - { role: php , when: "env in ['local', 'dev', 'pre', 'prod']" }
+    - { role: phpmyadmin , when: "env in ['local', 'dev', 'pre']" }
+    - { role: git , when: "env in ['local']" }
+    - { role: nodejs , when: "env in ['local', 'dev']" }
+    - { role: composer , when: "env in ['local']" }
+    - { role: symfony , when: "env in ['local', 'dev', 'pre', 'prod']" }

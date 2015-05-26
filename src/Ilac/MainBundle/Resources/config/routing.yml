@@ -1,0 +1,3 @@
+ilac_main_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IlacMainBundle:Default:index }

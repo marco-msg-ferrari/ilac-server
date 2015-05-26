@@ -1,0 +1,23 @@
+---
+- name: Node.js | Package prerequisites for node.js
+  apt: pkg=python-software-properties state=present
+  sudo: yes
+
+- name: Node.js | Add the Node.js PPA
+  apt_repository: repo='ppa:chris-lea/node.js' state=present
+  sudo: yes
+
+- name: Node.js | Install Node.js and npm
+  apt: pkg=nodejs update-cache=yes
+  sudo: yes
+
+- name: Installing packages
+  npm: >
+    name={{ item }}
+    global=yes
+    state=present
+  with_items: nodejs_packages
+
+- name: Updating global packages
+  command: npm update -g
+  when: nodejs_packages_update

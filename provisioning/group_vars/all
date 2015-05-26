@@ -1,0 +1,12 @@
+---
+project_name: km77
+project_root: /vagrant
+
+mysql_databases:
+  - { name: symfony, collation: utf8_general_ci, encoding: utf8 }
+mysql_users:
+  - { name: symfony, host: localhost, password: symfony_db, priv: 'symfony.*:ALL' }
+
+apache_create_vhosts: true
+apache_vhosts:
+  - { servername: "km77.localhost", document_root: /var/www/www.km77.com/web }

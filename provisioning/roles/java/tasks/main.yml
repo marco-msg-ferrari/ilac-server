@@ -1,0 +1,4 @@
+---
+- name: Java | Install java for Yui
+  apt: name=default-jre state=present
+

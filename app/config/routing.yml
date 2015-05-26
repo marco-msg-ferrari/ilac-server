@@ -1,0 +1,4 @@
+ilac_main:
+    resource: "@IlacMainBundle/Resources/config/routing.yml"
+    prefix:   /
+

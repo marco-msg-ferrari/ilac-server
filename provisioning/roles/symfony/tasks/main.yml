@@ -1,0 +1,34 @@
+---
+- name: Get local dir
+  local_action: shell pwd
+  register: result
+
+- name: Symfony | Check composer.lock
+  stat: path={{result.stdout}}/../composer.lock
+  register: composer_lock_file
+
+- name: Symfony | Composer install
+  command: composer install chdir={{result.stdout}}/../ --no-interaction
+  when: composer_lock_file.stat.exists == true
+
+- name: Symfony | Composer update
+  command: composer update chdir={{result.stdout}}/../
+  when: composer_lock_file.stat.exists == false
+
+- name: Symfony | Create parameters.yml
+  shell: cp -f parameters.yml.dist parameters.yml chdir={{result.stdout}}/../app/config/
+
+- name: Symfony | Update app_dev.php
+  template: src=app_dev.php dest={{result.stdout}}/../web/app_dev.php mode=444
+
+- name: Symlink current version into the web root
+  file: src={{result.stdout}}/../ dest=/var/www/www.km77.com state=link
+
+- name: Ensure SetFacl
+  apt: name=acl state=present
+
+- name: Set cache folder permissions
+  shell: >
+    setfacl -R -m u:"www-data":rwX -m u:`whoami`:rwX {{result.stdout}}/../app/cache {{result.stdout}}/../app/logs &&
+    setfacl -dR -m u:"www-data":rwX -m u:`whoami`:rwX {{result.stdout}}/../app/cache {{result.stdout}}/../app/logs
+  when: env == "dev"

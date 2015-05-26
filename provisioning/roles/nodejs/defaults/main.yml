@@ -1,0 +1,7 @@
+# global packages to install
+nodejs_packages:
+  - less
+  - uglify-js
+  - uglifycss
+# update all global packages
+nodejs_packages_update: no
