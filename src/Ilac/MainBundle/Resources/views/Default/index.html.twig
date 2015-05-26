@@ -3,22 +3,17 @@
 
 </head>
 <body>
-Hello {{ name }}!
-
+Hello {{ name }}
+<a href="{{ path('ilac_main_new') }}">new</a>
 <div>
-    <ul>
-
-{% for test in glucoTests %}
-    <li>
-        <div>
-            {{ test.getValue }}
-        </div>
-        <div>
-            {{ test.getCreatedAt|date("d/m/Y") }}
-        </div>
-    </li>
-{% endfor %}
-    </ul>
+  <ul>
+    {% for test in glucoTests %}
+      <li>
+        <div>{{ test.getValue }}</div>
+        <div>{{ test.getCreatedAt|date("d/m/Y") }}</div>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 </body>
 </html>

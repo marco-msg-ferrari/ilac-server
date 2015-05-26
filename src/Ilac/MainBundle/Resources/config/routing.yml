@@ -1,3 +1,6 @@
 ilac_main_homepage:
     path:     /
     defaults: { _controller: IlacMainBundle:Default:index }
+ilac_main_new:
+    path:     /new
+    defaults: { _controller: IlacMainBundle:Default:new }

@@ -30,11 +30,23 @@ class GlucoTest {
      */
     protected $value;
 
+    public function setValue($value){
+        $this->value = $value;
+    }
+
     public function getValue() {
         return $this->value;
     }
 
+    public function setCreatedAt($createdAt) {
+        $this->createdAt = $createdAt;
+    }
+
     public function getCreatedAt() {
         return $this->createdAt;
+    }
+
+    public function setUser($user) {
+        $this->user = $user;
     }
 }
