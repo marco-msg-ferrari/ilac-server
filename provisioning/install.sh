@@ -11,9 +11,9 @@ do
 done
 
 # if server
-if [ "$env" = "dev" ]; then
+if [ "$env" != "local" ]; then
     echo "Aws server, download tar and prepare"
-    aws s3 cp s3://km77-auto-conf/www.km77.com/dev/deploy.tar.bz2 deploy.tar.bz2 --region eu-west-1
+    aws s3 cp s3://auto-conf/ilac/$env/deploy.tar.bz2 deploy.tar.bz2 --region us-east-1
     tar xvfj deploy.tar.bz2
     rm deploy.tar.bz2
 else

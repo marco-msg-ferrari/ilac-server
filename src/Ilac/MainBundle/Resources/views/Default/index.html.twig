@@ -1,19 +1,24 @@
-<html>
-<head>
-
-</head>
-<body>
-Hello {{ name }}
-<a href="{{ path('ilac_main_new') }}">new</a>
+{% extends '::base.html.twig' %}
+{% block body %}
+<a class="btn btn-lg btn-success" href="{{ path('ilac_main_new') }}" role="button">New</a>
 <div>
-  <ul>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>DateTime</th>
+      <th>Level</th>
+      <th>Type</th>
+    </tr>
+    </thead>
+    <tbody>
     {% for test in glucoTests %}
-      <li>
-        <div>{{ test.getValue }}</div>
-        <div>{{ test.getCreatedAt|date("d/m/Y") }}</div>
-      </li>
+    <tr>
+      <td>{{ test.getCreatedAt|date("Y/m/d H:i") }}</td>
+      <td>{{ test.getValue }}</td>
+      <td>{{ test.getType }}</td>
+    </tr>
     {% endfor %}
-  </ul>
+    </tbody>
+  </table>
 </div>
-</body>
-</html>
+{% endblock %}

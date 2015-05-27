@@ -14,7 +14,7 @@ class DefaultController extends Controller
 
         $glucoTests = $this->getDoctrine()
             ->getRepository('IlacMainBundle:GlucoTest')
-            ->findByUser($this->getUser()->getId());
+            ->findByUser($this->getUser()->getId(), ['createdAt' => 'DESC']);
 
         return $this->render(
             'IlacMainBundle:Default:index.html.twig',
@@ -28,8 +28,12 @@ class DefaultController extends Controller
         $test = new GlucoTest();
 
         $form = $this->createFormBuilder($test)
-            ->add('value', 'text')
-            ->add('createdAt', 'date')
+            ->add('value', 'integer', ['required' => true])
+            ->add('type', 'choice', [
+                'choices'  => ['before_meal' => 'Before Meal', 'after_meal' => 'After Meal'],
+                'required' => true
+            ])
+            ->add('createdAt', 'datetime')
             ->add('save', 'submit', array('label' => 'Create Test'))
             ->getForm();
 

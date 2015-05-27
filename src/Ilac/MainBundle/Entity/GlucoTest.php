@@ -30,6 +30,20 @@ class GlucoTest {
      */
     protected $value;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $type;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
+    public function setUser($user) {
+        $this->user = $user;
+    }
+
     public function setValue($value){
         $this->value = $value;
     }
@@ -46,7 +60,11 @@ class GlucoTest {
         return $this->createdAt;
     }
 
-    public function setUser($user) {
-        $this->user = $user;
+    public function setType($type) {
+        $this->type = $type;
+    }
+
+    public function getType() {
+        return $this->type;
     }
 }
