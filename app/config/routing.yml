@@ -1,3 +1,8 @@
+ilac_public:
+    resource: "@IlacPublicBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 ilac_main:
     resource: "@IlacMainBundle/Resources/config/routing.yml"
     prefix:   /my/

@@ -24,8 +24,14 @@ class User extends BaseUser
      **/
     private $glucoTests;
 
+    /**
+     * @ORM\OneToMany(targetEntity="InsulinBolus", mappedBy="user")
+     **/
+    private $insulinBoluses;
+
     public function __construct() {
         parent::__construct();
         $this->glucoTests = new ArrayCollection();
+        $this->insulinBoluses = new ArrayCollection();
     }
 }

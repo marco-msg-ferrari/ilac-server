@@ -4,3 +4,6 @@ ilac_main_homepage:
 ilac_main_new:
     path:     /new
     defaults: { _controller: IlacMainBundle:Default:new }
+ilac_main_new_bolus:
+    path:     /newBolus
+    defaults: { _controller: IlacMainBundle:Default:newBolus }

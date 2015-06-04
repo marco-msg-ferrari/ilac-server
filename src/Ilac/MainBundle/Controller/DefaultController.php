@@ -3,6 +3,7 @@
 namespace Ilac\MainBundle\Controller;
 
 use Ilac\MainBundle\Entity\GlucoTest;
+use Ilac\MainBundle\Entity\InsulinBolus;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -53,6 +54,42 @@ class DefaultController extends Controller
 
         return $this->render('IlacMainBundle:Default:new.html.twig', array(
             'form' => $form->createView(),
+            'title' => 'Medition',
+        ));
+    }
+
+    public function newBolusAction(Request $request)
+    {
+        // create a task and give it some dummy data for this example
+        $test = new InsulinBolus();
+
+        $form = $this->createFormBuilder($test)
+            ->add('value', 'integer', ['required' => true])
+            ->add('type', 'choice', [
+                'choices'  => ['fast' => 'Fast', 'slow' => 'Slow'],
+                'required' => true
+            ])
+            ->add('createdAt', 'datetime')
+            ->add('save', 'submit', array('label' => 'Create Bolus'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            // perform some action, such as saving the task to the database
+
+            $test->setUser($this->getUser());
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($test);
+            $em->flush();
+
+            return $this->redirectToRoute('ilac_main_homepage');
+        }
+
+        return $this->render('IlacMainBundle:Default:new.html.twig', array(
+            'form' => $form->createView(),
+            'title' => 'Bolus',
         ));
     }
 }
