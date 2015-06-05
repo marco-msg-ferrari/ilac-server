@@ -5,5 +5,8 @@ ilac_main_new:
     path:     /new
     defaults: { _controller: IlacMainBundle:Default:new }
 ilac_main_new_bolus:
-    path:     /newBolus
+    path:     /bolus
     defaults: { _controller: IlacMainBundle:Default:newBolus }
+ilac_main_calc_bolus:
+    path:     /bolus/calc/{testID}/{carb}
+    defaults: { _controller: IlacMainBundle:Default:calcBolus }

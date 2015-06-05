@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Ilac\MainBundle\IlacMainBundle(),
             new Ilac\PublicBundle\IlacPublicBundle(),
         );

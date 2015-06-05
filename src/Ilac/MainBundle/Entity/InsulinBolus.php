@@ -18,6 +18,11 @@ class InsulinBolus extends BaseEvent {
      */
     protected $type;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $carbohydrates;
+
     protected $discr = 'Bolus';
 
     public function setValue($value){
@@ -34,5 +39,13 @@ class InsulinBolus extends BaseEvent {
 
     public function getType() {
         return $this->type;
+    }
+
+    public function setCarbohydrates($carbohydrates) {
+        $this->carbohydrates = $carbohydrates;
+    }
+
+    public function getCarbohydrates() {
+        return $this->carbohydrates;
     }
 }
