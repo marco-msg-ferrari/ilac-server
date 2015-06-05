@@ -10,3 +10,5 @@ ilac_main_new_bolus:
 ilac_main_calc_bolus:
     path:     /bolus/calc/{testID}/{carb}
     defaults: { _controller: IlacMainBundle:Default:calcBolus }
+    options:
+        expose: true

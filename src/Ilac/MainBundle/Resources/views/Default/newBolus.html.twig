@@ -1,10 +1,17 @@
 {% extends '::base.html.twig' %}
+{% block jscript %}
+  <script src="/js/boluscalc.js"></script>
+{% endblock %}
 {% block body %}
   <h1>{{ title }}</h1>
-  <div>{{ lastTest.getValue }}  {{ lastTest.getCreatedAt|date("Y/m/d H:i") }}</div>
+  <ul class="nav nav-pills">
+    <li role="presentation" class="active" id="slowSel"><a href="javascript:changeToSlow();">Slow</a></li>
+    <li role="presentation" id="fastSel"><a href="javascript:changeToFast();">Fast</a></li>
+  </ul>
 <div>
   {{ form_start(form) }}
   {{ form_widget(form) }}
   {{ form_end(form) }}
 </div>
+<!-- div id="lastTest">{{ lastTest.getValue }}  {{ lastTest.getCreatedAt|date("Y/m/d H:i") }}</div -->
 {%  endblock %}

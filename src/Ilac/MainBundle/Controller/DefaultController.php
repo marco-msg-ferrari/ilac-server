@@ -50,7 +50,7 @@ class DefaultController extends Controller
             $em->persist($test);
             $em->flush();
 
-            return $this->redirectToRoute('ilac_main_homepage');
+            return $this->redirectToRoute('ilac_main_new_bolus');
         }
 
         return $this->render('IlacMainBundle:Default:new.html.twig', array(
@@ -70,7 +70,10 @@ class DefaultController extends Controller
 
         $form = $this->createFormBuilder($test)
             ->add('type', 'choice', [
-                'choices'  => ['fast' => 'Fast', 'slow' => 'Slow'],
+                'choices'  => [
+                    'slow' => 'Slow',
+                    'fast' => 'Fast'
+                ],
                 'required' => true
             ])
             ->add('carbohydrates', 'integer', ['required' => false])
@@ -102,7 +105,7 @@ class DefaultController extends Controller
 
     public function calcBolusAction(Request $request, $testID, $carb)
     {
-        $response = ['a'];
+        $response = ['suggest' => 0];
         return new Response(json_encode($response));
     }
 }
