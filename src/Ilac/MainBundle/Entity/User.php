@@ -20,18 +20,12 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="GlucoTest", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="BaseEvent", mappedBy="user")
      **/
-    private $glucoTests;
-
-    /**
-     * @ORM\OneToMany(targetEntity="InsulinBolus", mappedBy="user")
-     **/
-    private $insulinBoluses;
+    private $events;
 
     public function __construct() {
         parent::__construct();
-        $this->glucoTests = new ArrayCollection();
-        $this->insulinBoluses = new ArrayCollection();
+        $this->events = new ArrayCollection();
     }
 }

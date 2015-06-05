@@ -9,14 +9,16 @@
       <th>DateTime</th>
       <th>Level</th>
       <th>Type</th>
+      <th>Discr</th>
     </tr>
     </thead>
     <tbody>
-    {% for test in glucoTests %}
+    {% for event in events %}
     <tr>
-      <td>{{ test.getCreatedAt|date("Y/m/d H:i") }}</td>
-      <td>{{ test.getValue }}</td>
-      <td>{{ test.getType }}</td>
+      <td>{{ event.getCreatedAt|date("Y/m/d H:i") }}</td>
+      <td>{{ event.getValue }}</td>
+      <td>{{ event.getType }}</td>
+      <td>{{ event.getDiscr }}</td>
     </tr>
     {% endfor %}
     </tbody>

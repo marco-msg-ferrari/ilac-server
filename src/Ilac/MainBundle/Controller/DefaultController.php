@@ -13,13 +13,13 @@ class DefaultController extends Controller
     {
         $name = $this->getUser()->getUsername();
 
-        $glucoTests = $this->getDoctrine()
-            ->getRepository('IlacMainBundle:GlucoTest')
+        $events = $this->getDoctrine()
+            ->getRepository('IlacMainBundle:BaseEvent')
             ->findByUser($this->getUser()->getId(), ['createdAt' => 'DESC']);
 
         return $this->render(
             'IlacMainBundle:Default:index.html.twig',
-            ['name' => $name, 'glucoTests' => $glucoTests]
+            ['name' => $name, 'events' => $events]
         );
     }
 
