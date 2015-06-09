@@ -32,7 +32,11 @@ class DefaultController extends Controller
         $form = $this->createFormBuilder($test)
             ->add('value', 'integer', ['required' => true])
             ->add('type', 'choice', [
-                'choices'  => ['before_meal' => 'Before Meal', 'after_meal' => 'After Meal'],
+                'choices'  => [
+                    'before_meal' => 'Before Meal',
+                    'after_meal' => 'After Meal',
+                    'far_from_meal' => 'Far From Meal'
+                ],
                 'required' => true
             ])
             ->add('createdAt', 'datetime')
