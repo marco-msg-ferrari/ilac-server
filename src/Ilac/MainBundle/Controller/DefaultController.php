@@ -16,7 +16,7 @@ class DefaultController extends Controller
 
         $events = $this->getDoctrine()
             ->getRepository('IlacMainBundle:BaseEvent')
-            ->findByUser($this->getUser()->getId(), ['createdAt' => 'DESC']);
+            ->findByUser($this->getUser()->getId(), ['createdAt' => 'DESC', 'id' => 'DESC']);
 
         return $this->render(
             'IlacMainBundle:Default:index.html.twig',
