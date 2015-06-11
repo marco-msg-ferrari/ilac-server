@@ -53,8 +53,7 @@ class GraphController extends Controller
             if ($event->getType() == 'after_meal') {
                 $type = '_after';
             }
-            $days[$event->getCreatedAt()->format('Y-m-d')][$event->getPartOfDay() . $type] = $event->getValue();
-            $days[$event->getCreatedAt()->format('Y-m-d')]['event'] = $event;
+            $days[$event->getCreatedAt()->format('Y-m-d')][$event->getPartOfDay() . $type] = $event;
         }
 
         return $days;

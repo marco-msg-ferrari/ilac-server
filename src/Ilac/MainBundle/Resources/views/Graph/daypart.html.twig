@@ -1,0 +1,5 @@
+{% if (event != '') %}
+<td><span class='{{ event.getStatus }}' title='{{ event.getCreatedAt|date("Y/m/d H:i") }}'>{{ event.getValue }}</span></td>
+{% else %}
+<td>&nbsp;</td>
+{% endif %}

@@ -18,47 +18,13 @@
     {% for day, values in days %}
     <tr>
       <td>{{ day }}</td>
-      {% if (values.morning_before != '') %}
-      <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.morning_before }}</span></td>
-      {% else %}
-      <td>&nbsp;</td>
-      {% endif %}
-
-      {% if (values.morning_after != '') %}
-        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.morning_after }}</span></td>
-      {% else %}
-        <td>&nbsp;</td>
-      {% endif %}
-
-      {% if (values.afternoon_before != '') %}
-        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.afternoon_before }}</span></td>
-      {% else %}
-        <td>&nbsp;</td>
-      {% endif %}
-
-      {% if (values.afternoon_after != '') %}
-        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.afternoon_after }}</span></td>
-      {% else %}
-        <td>&nbsp;</td>
-      {% endif %}
-
-      {% if (values.evening_before != '') %}
-        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.evening_before }}</span></td>
-      {% else %}
-        <td>&nbsp;</td>
-      {% endif %}
-
-      {% if (values.evening_after != '') %}
-        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.evening_after }}</span></td>
-      {% else %}
-        <td>&nbsp;</td>
-      {% endif %}
-
-      {% if (values.night != '') %}
-        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.night }}</span></td>
-      {% else %}
-        <td>&nbsp;</td>
-      {% endif %}
+      {% include 'IlacMainBundle:Graph:daypart.html.twig' with {'event': values.morning_before} %}
+      {% include 'IlacMainBundle:Graph:daypart.html.twig' with {'event': values.morning_after} %}
+      {% include 'IlacMainBundle:Graph:daypart.html.twig' with {'event': values.afternoon_before} %}
+      {% include 'IlacMainBundle:Graph:daypart.html.twig' with {'event': values.afternoon_after} %}
+      {% include 'IlacMainBundle:Graph:daypart.html.twig' with {'event': values.evening_before} %}
+      {% include 'IlacMainBundle:Graph:daypart.html.twig' with {'event': values.evening_after} %}
+      {% include 'IlacMainBundle:Graph:daypart.html.twig' with {'event': values.night} %}
     </tr>
     {% endfor %}
     </tbody>
