@@ -35,4 +35,21 @@ class GlucoTest extends BaseEvent {
     public function getType() {
         return $this->type;
     }
+
+    public function getStatus() {
+        $min = 80;
+        $max = 100;
+        if ($this->type == 'after_meal') {
+            $min = 120;
+            $max = 140;
+        }
+
+        if ($this->value < $min) {
+            return 'low';
+        } elseif ($this->value > $max) {
+            return 'high';
+        } else {
+            return 'normal';
+        }
+    }
 }

@@ -1,0 +1,15 @@
+.low::after {
+    font-family: FontAwesome;
+    content: " \f063";
+    color: red;
+}
+.normal::after {
+    font-family: FontAwesome;
+    content: " \f00c";
+    color: green;
+}
+.high::after {
+    font-family: FontAwesome;
+    content: " \f062";
+    color: blue;
+}

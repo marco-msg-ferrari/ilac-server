@@ -54,6 +54,7 @@ class GraphController extends Controller
                 $type = '_after';
             }
             $days[$event->getCreatedAt()->format('Y-m-d')][$event->getPartOfDay() . $type] = $event->getValue();
+            $days[$event->getCreatedAt()->format('Y-m-d')]['event'] = $event;
         }
 
         return $days;

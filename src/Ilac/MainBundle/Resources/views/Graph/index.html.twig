@@ -18,13 +18,47 @@
     {% for day, values in days %}
     <tr>
       <td>{{ day }}</td>
-      <td>{{ values.morning_before }}</td>
-      <td>{{ values.morning_after }}</td>
-      <td>{{ values.afternoon_before }}</td>
-      <td>{{ values.afternoon_after }}</td>
-      <td>{{ values.evening_before }}</td>
-      <td>{{ values.evening_after }}</td>
-      <td>{{ values.night }}</td>
+      {% if (values.morning_before != '') %}
+      <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.morning_before }}</span></td>
+      {% else %}
+      <td>&nbsp;</td>
+      {% endif %}
+
+      {% if (values.morning_after != '') %}
+        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.morning_after }}</span></td>
+      {% else %}
+        <td>&nbsp;</td>
+      {% endif %}
+
+      {% if (values.afternoon_before != '') %}
+        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.afternoon_before }}</span></td>
+      {% else %}
+        <td>&nbsp;</td>
+      {% endif %}
+
+      {% if (values.afternoon_after != '') %}
+        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.afternoon_after }}</span></td>
+      {% else %}
+        <td>&nbsp;</td>
+      {% endif %}
+
+      {% if (values.evening_before != '') %}
+        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.evening_before }}</span></td>
+      {% else %}
+        <td>&nbsp;</td>
+      {% endif %}
+
+      {% if (values.evening_after != '') %}
+        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.evening_after }}</span></td>
+      {% else %}
+        <td>&nbsp;</td>
+      {% endif %}
+
+      {% if (values.night != '') %}
+        <td><span class='{{ values.event.getStatus }}' title='{{ values.event.getCreatedAt|date("Y/m/d H:i") }}'>{{ values.night }}</span></td>
+      {% else %}
+        <td>&nbsp;</td>
+      {% endif %}
     </tr>
     {% endfor %}
     </tbody>
