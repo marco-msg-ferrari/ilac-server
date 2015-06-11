@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="44749712dbec183e983dcd78a7736c41" resname="Date">
+        <source>Date</source>
+        <target>Fecha</target>
+      </trans-unit>
+      <trans-unit id="cf5cf5be91bc2f04ad8677a559ec392c" resname="GlucoTest">
+        <source>GlucoTest</source>
+        <target>Test</target>
+      </trans-unit>
+      <trans-unit id="b90eb2016745d67a13274b71e29ece1b" resname="Bolus">
+        <source>Bolus</source>
+        <target>Bolo</target>
+      </trans-unit>
+      <trans-unit id="8cf10d2341ed01492506085688270c1e" resname="DateTime">
+        <source>DateTime</source>
+        <target>Fecha Hora</target>
+      </trans-unit>
+      <trans-unit id="a0db49ba470c1c9ae2128c3470339153" resname="Level">
+        <source>Level</source>
+        <target>Nivel</target>
+      </trans-unit>
+      <trans-unit id="a1fa27779242b4902f7ae3bdd5c6d508" resname="Type">
+        <source>Type</source>
+        <target>Tipo</target>
+      </trans-unit>
+      <trans-unit id="dadbba21b9d4463903645db7192caa53" resname="Discr">
+        <source>Discr</source>
+        <target>Descr</target>
+      </trans-unit>
+      <trans-unit id="efa5397985b8609a5dbeb430a4bcadd3" resname="Slow">
+        <source>Slow</source>
+        <target>Lenta</target>
+      </trans-unit>
+      <trans-unit id="e16b5b7f26f54214445cbe38d72c2828" resname="Fast">
+        <source>Fast</source>
+        <target>Rapida</target>
+      </trans-unit>
+      <trans-unit id="648466bfa2e749be9e2c462992130e57" resname="No Bolus">
+        <source>No Bolus</source>
+        <target>No Bolo</target>
+      </trans-unit>
+      <trans-unit id="d550b88f6d7b99c2b4cf2e982b4d548b" resname="Morning Before">
+        <source>Morning Before</source>
+        <target>Desayuno</target>
+      </trans-unit>
+      <trans-unit id="eb70280e24ae944f00be7f3c97b44ee3" resname="Morning After">
+        <source>Morning After</source>
+        <target>Post Desayuno</target>
+      </trans-unit>
+      <trans-unit id="54686437324e2614f8655f57e9c5c393" resname="Afternoon Before">
+        <source>Afternoon Before</source>
+        <target>Comida</target>
+      </trans-unit>
+      <trans-unit id="44a70f351fd9858fb1687ed55a1db233" resname="Afternoon After">
+        <source>Afternoon After</source>
+        <target>Post Comida</target>
+      </trans-unit>
+      <trans-unit id="a1a44ebd5abb0a07bfb645c6a5dc86f7" resname="Evening Before">
+        <source>Evening Before</source>
+        <target>Cena</target>
+      </trans-unit>
+      <trans-unit id="f53faf8062f202a659aa0397733c9566" resname="Evening After">
+        <source>Evening After</source>
+        <target>Post Cena</target>
+      </trans-unit>
+      <trans-unit id="0edc9b073397681dc9f2c479686ea0d9" resname="Night">
+        <source>Night</source>
+        <target>Noche</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

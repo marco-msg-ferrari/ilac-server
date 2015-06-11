@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="es" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="4ee29ca12c7d126654bd0e5275de6135" resname="List">
+        <source>List</source>
+        <target>Lista</target>
+      </trans-unit>
+      <trans-unit id="4cdbd2bafa8193091ba09509cedf94fd" resname="Graph">
+        <source>Graph</source>
+        <target>Grafico</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

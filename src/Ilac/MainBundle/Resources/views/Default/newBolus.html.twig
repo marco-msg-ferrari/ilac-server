@@ -5,9 +5,9 @@
 {% block body %}
   <h1>{{ title }}</h1>
   <ul class="nav nav-pills">
-    <li role="presentation" class="active" id="slowSel"><a href="javascript:changeToSlow();">Slow</a></li>
-    <li role="presentation" id="fastSel"><a href="javascript:changeToFast();">Fast</a></li>
-    <li role="presentation"><a href="{{ path('ilac_main_homepage') }}">No Bolus</a></li>
+    <li role="presentation" class="active" id="slowSel"><a href="javascript:changeToSlow();">{% trans %}Slow{% endtrans %}</a></li>
+    <li role="presentation" id="fastSel"><a href="javascript:changeToFast();">{% trans %}Fast{% endtrans %}</a></li>
+    <li role="presentation"><a href="{{ path('ilac_main_homepage') }}">{% trans %}No Bolus{% endtrans %}</a></li>
   </ul>
 <div>
   {{ form_start(form) }}

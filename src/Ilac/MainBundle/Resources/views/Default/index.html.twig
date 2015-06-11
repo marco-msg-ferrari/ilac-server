@@ -1,15 +1,15 @@
 {% extends '::base.html.twig' %}
 {% block body %}
-<a class="btn btn-lg btn-success" href="{{ path('ilac_main_new') }}" role="button">GlucoTest</a>
-  <a class="btn btn-lg btn-success" href="{{ path('ilac_main_new_bolus') }}" role="button">Bolus</a>
+<a class="btn btn-lg btn-success" href="{{ path('ilac_main_new') }}" role="button">{% trans %}GlucoTest{% endtrans %}</a>
+  <a class="btn btn-lg btn-success" href="{{ path('ilac_main_new_bolus') }}" role="button">{% trans %}Bolus{% endtrans %}</a>
 <div>
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>DateTime</th>
-      <th>Level</th>
-      <th>Type</th>
-      <th>Discr</th>
+      <th>{% trans %}DateTime{% endtrans %}</th>
+      <th>{% trans %}Level{% endtrans %}</th>
+      <th>{% trans %}Type{% endtrans %}</th>
+      <th>{% trans %}Discr{% endtrans %}</th>
     </tr>
     </thead>
     <tbody>
