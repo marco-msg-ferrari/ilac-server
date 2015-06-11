@@ -12,3 +12,6 @@ ilac_main_calc_bolus:
     defaults: { _controller: IlacMainBundle:Default:calcBolus }
     options:
         expose: true
+ilac_graph_home:
+    path:     /graph/
+    defaults: { _controller: IlacMainBundle:Graph:index }

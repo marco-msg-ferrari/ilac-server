@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+<div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Morning Before</th>
+      <th>Morning After</th>
+      <th>Afternoon Before</th>
+      <th>Afternoon After</th>
+      <th>Evening Before</th>
+      <th>Evening After</th>
+      <th>Night</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for day, values in days %}
+    <tr>
+      <td>{{ day }}</td>
+      <td>{{ values.morning_before }}</td>
+      <td>{{ values.morning_after }}</td>
+      <td>{{ values.afternoon_before }}</td>
+      <td>{{ values.afternoon_after }}</td>
+      <td>{{ values.evening_before }}</td>
+      <td>{{ values.evening_after }}</td>
+      <td>{{ values.night }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

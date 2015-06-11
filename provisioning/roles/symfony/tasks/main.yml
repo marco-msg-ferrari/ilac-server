@@ -31,4 +31,4 @@
   shell: >
     setfacl -R -m u:"www-data":rwX -m u:`whoami`:rwX {{result.stdout}}/../app/cache {{result.stdout}}/../app/logs &&
     setfacl -dR -m u:"www-data":rwX -m u:`whoami`:rwX {{result.stdout}}/../app/cache {{result.stdout}}/../app/logs
-  when: env == "dev"
+#  when: env == "dev"

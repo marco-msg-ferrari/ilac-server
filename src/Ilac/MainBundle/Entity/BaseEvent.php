@@ -50,4 +50,22 @@ class BaseEvent {
     public function getDiscr() {
         return $this->discr;
     }
+
+    public function getPartOfDay() {
+        $start_date = new \DateTime($this->createdAt->format('Y-m-d') .' 00:00:00');
+        $since_start = $start_date->diff($this->createdAt);
+        $minutes = $since_start->days * 24 * 60;
+        $minutes += $since_start->h * 60;
+        $minutes += $since_start->i;
+
+        if ($minutes <= 2 * 60) {
+            return 'night';
+        } elseif ($minutes <= 11 * 60) {
+            return 'morning';
+        } elseif ($minutes <= 18 * 60) {
+            return 'afternoon';
+        } else {
+            return 'evening';
+        }
+    }
 }
