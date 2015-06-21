@@ -49,11 +49,16 @@ class GraphController extends Controller
         $days[$lastDate]['night'] = '';
 
         foreach ($events as $event) {
-            $type = '_before';
-            if ($event->getType() == 'after_meal') {
-                $type = '_after';
+            $partOD = $event->getPartOfDay();
+            if ($partOD == 'night') {
+                $days[$event->getCreatedAt()->sub(new \DateInterval('P1D'))->format('Y-m-d')]['night'] = $event;
+            } else {
+                $type = '_before';
+                if ($event->getType() == 'after_meal') {
+                    $type = '_after';
+                }
+                $days[$event->getCreatedAt()->format('Y-m-d')][$partOD.$type] = $event;
             }
-            $days[$event->getCreatedAt()->format('Y-m-d')][$event->getPartOfDay() . $type] = $event;
         }
 
         return $days;

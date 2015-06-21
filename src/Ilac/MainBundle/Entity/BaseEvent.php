@@ -58,9 +58,9 @@ class BaseEvent {
         $minutes += $since_start->h * 60;
         $minutes += $since_start->i;
 
-        if ($minutes <= 2 * 60) {
+        if ($minutes <= 4 * 60) {
             return 'night';
-        } elseif ($minutes <= 11 * 60) {
+        } elseif ($minutes <= 13 * 60) {
             return 'morning';
         } elseif ($minutes <= 18 * 60) {
             return 'afternoon';
