@@ -37,10 +37,10 @@ class GlucoTest extends BaseEvent {
     }
 
     public function getStatus() {
-        $min = 80;
+        $min = 60;
         $max = 100;
         if ($this->type == 'after_meal') {
-            $min = 120;
+            $min = 100;
             $max = 140;
         }
 
